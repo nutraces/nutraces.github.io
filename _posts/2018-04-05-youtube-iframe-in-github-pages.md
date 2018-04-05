@@ -11,7 +11,7 @@ title: "How to embed or add youtube video as iframe in github pages"
     
 - Form the new embed url by taking id "6A5EpqqDOdk" like https://www.youtube.com/embed/6A5EpqqDOdk 
 
-- Add it to iframe as '''<iframe width="560" height="315" src="https://www.youtube.com/embed/6A5EpqqDOdk" frameborder="0" allowfullscreen></iframe>'''
+- Add it to iframe as `<iframe width="560" height="315" src="https://www.youtube.com/embed/6A5EpqqDOdk" frameborder="0" allowfullscreen></iframe>`
 
 - Place the iframe content wherever you prefer as below
 
