@@ -4,8 +4,8 @@ title: "How to setup wordpress using docker"
 ---
 
 
-1. Install docker ce or ee
-2. create docker-compose.yml as below
+* Install docker ce or ee
+* create docker-compose.yml as below
 
 ```
 version: '3.3'
@@ -47,18 +47,20 @@ networks:
 volumes:
   db_data: 
   html:
-  
+ ```
+ 
+ ```
 
  * volumes - html : if you have existing wordpress , copy to here otherwise it will generate one during installation
  * volumes - db_data : it stores mysql data in the host machine , this is to avoid loss of data during container restart/redeploy
  
  ```
  
-3. Execute `docker-compose up -d` 
+* Execute `docker-compose up -d` 
 
-4. Verify using `docker ps -a` and `docker logs <container id>`
+* Verify using `docker ps -a` and `docker logs <container id>`
 
-5. To import your existing wordpress database , you can provide remote access to for mysql user as follows
+* To import your existing wordpress database , you can provide remote access to for mysql user as follows
 
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION; 
@@ -71,9 +73,9 @@ FLUSH PRIVILEGES;
 
 ```
 
-6. Import the existing database
+* Import the existing database
 
-7. Update migration script for localhost docker deployment as
+* Update migration script for localhost docker deployment as
 
 ```
 UPDATE wp_options SET option_value = replace(option_value, 'http://example.com', 'http://127.0.0.1') WHERE option_name = 'home' OR option_name = 'siteurl';
@@ -83,10 +85,10 @@ UPDATE wp_postmeta SET meta_value = replace(meta_value,'http://example.com','htt
 commit;
 ```
 
-8. Expose 80 port in the host machine to access the application
+* Expose 80 port in the host machine to access the application
 
-9. Verify the application http://example.com or http://localhost
+* Verify the application http://example.com or http://localhost
 
-10. Also, If you use nginx you can expose the wordpress ports to different and configure the same in nginx
+* Also, If you use nginx you can expose the wordpress ports to different and configure the same in nginx
 
  
