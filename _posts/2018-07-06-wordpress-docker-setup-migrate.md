@@ -4,7 +4,7 @@ title: "How to setup wordpress using docker"
 ---
 
 
-* Install docker ce or ee
+* Install docker ce or ee ( I assume docker installation is done and considering as a prequisite)
 * create docker-compose.yml as below
 
 ```
