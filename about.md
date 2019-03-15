@@ -1,13 +1,11 @@
 ---
 layout: page
 title: About
-tagline: A few more words about this theme
+tagline: 
 permalink: /about.html
 ---
 
-This is the _Cayman Blog_ Jekyll theme. You can find out more info about customizing this theme, as well as basic usage documentation, and source code at: [cayman-blog](https://github.com/lorepirri/cayman-blog)
-
-You can find the source code for _Jekyll_ at [jekyll](https://github.com/jekyll/jekyll)
+Welcome to NuTraces , You will find some small techincal unknowns that I had solved or used to achieve the goals I intended. I will try to mark the traces on my learning path. Thanks to visit my blog , please do share your feedbacks here <a href="mailto:mdparthi@quehive.com">mdparthi@quehive.com</a>
 
 
 [Go to the Home Page]({{ site.url }}{{ site.baseurl }})
