@@ -1,30 +1,75 @@
 ---
 layout: default
 ---
-
 <div>
 
   {{ content }}
 
-  <h2>Latest Posts</h2>
-
   <div>&nbsp;</div>
 
-  <ul class="post-list">
+  <ul id="col-ul-aside" class="post-list">
     {% for post in site.posts %}
-      <li>
-
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
-        </h2>
-
-        <span>{{ post.excerpt | markdownify | truncatewords: 30 }}</span>
-
-      </li>
+    <li class="col-li-aside">
+        <a  style="text-decoration: none !important" href="{{ post.url | relative_url }}"
+        title="{{ post.title }}">
+      <div class="card">
+        <div class="card-avatar-grad">
+            <h4 class="post-link-txt">{{ post.title | escape }}</h4>
+        </div>
+        <div class="container">
+          
+          {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
+          <p class="post-meta">{{ post.date | date: date_format }}</p>
+        </div>
+      </div>
+    </a>
+    </li>
     {% endfor %}
   </ul>
-
 </div>
+
+<style>
+    .col-li-aside {
+      width: 300px;
+      float: left;
+      padding: 0 10px;
+    }
+  
+    .card-avatar-grad {
+      background: #36D1DC;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #5B86E5, #36D1DC);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+      width: 100%;
+      height: 200px
+    }
+  
+    .post-link-txt {
+      padding:40px 25px 0px !important;
+      font-size: 18px !important;
+      color:#fff !important;
+    }
+  
+     .post-meta {
+      /* color: #fff !important; */
+      padding-top: 20px !important;
+      font-size: 13px !important;
+    } 
+  
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      height: 270px;
+    }
+  
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+  
+    .container {
+      padding: 2px 16px;
+    }
+  </style>
